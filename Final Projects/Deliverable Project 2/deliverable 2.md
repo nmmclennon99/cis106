@@ -17,30 +17,20 @@
   You can allow specific services by running commands like: sudo ufw allow ssh
 
 ## 3. How do you check if the Ubuntu Firewall is running?
-    1. Check the Firewall Status: Enter the following command in the terminal sudo ufw status
-   
-    2. Read the Output: The terminal will display the status of UFW. If the firewall is active, you will see something like this:
-    Status: Active Status: Inactive
+    
+To verify if the Ubuntu firewall is currently running, you can use the Uncomplicated Firewall (UFW). First, open the terminal by pressing CTRL + ALT + T on your keyboard. Once the terminal is open, type in the command sudo ufw status and press Enter. This command will check the status of the firewall. If the firewall is operational, the output will indicate that the status is "active" and will display the configured rules. Conversely, if the firewall is not running, the output will show "inactive." 
+
 
 ## 4. How do you disable the Ubuntu Firewall?
-    1. Disable the Firewall: Use the following command: sudo ufw disable
+  
+To disable the Ubuntu firewall, also known as the Uncomplicated Firewall (UFW), you first need to open the terminal by pressing CTRL + ALT + T on your keyboard. Once the terminal is open, type in the command sudo ufw disable and press Enter. This command will deactivate the firewall, and you'll see a confirmation message indicating that the firewall is now inactive. Disabling the firewall may leave your system vulnerable to security threats, so it's advisable to re-enable it once your necessary changes or troubleshooting is completed. If you ever need to re-enable the firewall, you can use the command sudo ufw enable.
 
 ## 5. How do you add Apache to the Firewall?
-  
-      1. Check if Apache is Installed: Ensure that Apache is installed on your system by running:
-      sudo apt-get install apache2
+  To allow Apache through the Ubuntu firewall, also known as the Uncomplicated Firewall (UFW), you need to open the terminal by pressing CTRL + ALT + T on your keyboard. Once the terminal is open, type the command sudo ufw allow Apache Full'and press Enter. This command allows traffic on both port 80 (HTTP) and port 443 (HTTPS), which are used by Apache. After running this command, UFW will update its rules to allow incoming connections to Apache. You can verify that the rules have been added correctly by typing sudo ufw status, which will show the current firewall rules, including the newly added Apache rules. This configuration ensures that your web server can receive external HTTP and HTTPS requests, making your hosted websites accessible to users.
 
-      2.  Add Apache to UFW: Use the following command to allow HTTP (port 80) and HTTPS (port 443) traffic:
-      sudo ufw allow 'Apache'
 
-      3.  Enable UFW: If it's not already enabled, you can enable the firewall with:
-      sudo ufw enable
-
-      4. Check the Status: Verify that the rules have been added and the firewall is active by running:
-      sudo ufw status
-
+      
 ## 6. What is the command you used to install Apache?
-      sudo apt-get update
       sudo apt-get install apache2
 
 ## 7. What is the command you use to check if Apache is running?
